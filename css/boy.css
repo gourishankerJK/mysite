@@ -1,0 +1,361 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+/* lets get started */
+.cartoon {
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	background: #95B3BF;
+	overflow: hidden;
+	transform: scale(1.2);
+	top: 40%;
+	left: 50%;
+	z-index: 100;
+}
+
+.boys .faces {
+	width: 60px;
+	height: 70px;
+	border: 1px solid transparent;
+	background-color: rgb(242, 198, 175);
+	position: absolute;
+	left: 16%;
+	border-radius: 40%;
+	transform: scale(0.6);
+}
+
+.boys .eyes {
+	width: 8px;
+	height: 16px;
+	border: 2px solid transparent;
+	background-color: black;
+	position: absolute;
+	top: 20px;
+	left: 12px;
+	border-radius: 50%;
+	animation: grow 0.7s 2.2s 1 ease, eye-blink 4s 4.4s infinite linear;
+}
+
+/* EyeBrows */
+.eyes::before {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-right: 3px solid black;
+	border-radius: 50%;
+	left: -9px;
+	top: -8px;
+	transform: rotate(-90deg);
+	animation: eyebrow-raise 2s 6.6s infinite;
+}
+
+#boy-right-eye {
+	position: absolute;
+	left: 35px;
+}
+
+.eyes::after {
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 4px;
+	border: 1px solid white;
+	border-radius: 50%;
+	top: 3px;
+	left: 0px;
+	animation: eyeball-raise 2s 6.6s infinite;
+}
+
+.boys .noses {
+	position: absolute;
+	width: 20px;
+	height: 1px;
+	background-color: black;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	top: 40px;
+	left: 18px;
+}
+
+.boys .noses::after, .boys .noses::before {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 20px;
+	background-color: rgb(231, 188, 166);
+	border: 2px solid transparent;
+	border-radius: 50%;
+}
+
+.boys .noses::after {
+	transform: rotate(-37deg);
+	top: 2px;
+	left: -16px;
+}
+
+.boys .noses::before {
+	transform: rotate(37deg);
+	top: 3px;
+	left: 20px;
+}
+
+.boys .mouths {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-right: 8px solid white;
+	border-radius: 50%;
+	top: 35px;
+	left: 18px;
+	transform: rotate(90deg);
+	animation: mouth-opening 3s linear 0s 1 forwards;
+	animation-fill-mode: backwards;
+	z-index: 1;
+}
+
+/* Body */
+.boys .mouths::after {
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 45px;
+	background-color: green;
+	border-radius: 30%;
+	top: -10px;
+	left: 34px;
+	transform: rotate(91deg);
+	z-index: -1;
+	transform: scale(1);
+}
+
+.boys .mouths::before {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background-color: rgb(242, 198, 175);
+	border-radius: 50%;
+	top: 3px;
+	left: 30px;
+	transform: rotate(90deg);
+	z-index: 3;
+}
+
+.faces .ears {
+	position: absolute;
+	width: 7.5px;
+	height: 7.5px;
+	background-color: rgb(242, 198, 175);
+	border-radius: 50%;
+	transform: rotate(90deg);
+	transform: rotateY(45deg);
+}
+
+#left-ear {
+	top: 30px;
+	left: -7px;
+}
+
+#right-ear {
+	top: 30px;
+	left: 57px;
+}
+
+.faces .ears::after {
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 2px;
+	top: 3px;
+	left: 3px;
+	background-color: black;
+	border-radius: 50%;
+	transform: rotate(45deg);
+	transform: rotateY(45deg);
+}
+
+.hairs {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-right: 25px solid black;
+	border-radius: 50%;
+	top: -14px;
+	z-index: 1;
+}
+
+#left-hair {
+	left: 14px;
+	transform: rotate(-65deg);
+}
+
+#right-hair {
+	left: -10px;
+	transform: rotate(-125deg);
+}
+
+#left-hair::after {
+	content: "";
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	top: -8px;
+	left: 35px;
+	transform: rotate(70deg);
+	border: 5px solid transparent;
+	border-bottom: 20px solid black;
+}
+
+#right-hair::after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 10px;
+	background-color: red;
+	border: 1px solid red;
+	border-radius: 50%;
+	transform: rotate(-55deg);
+	top: 28px;
+	left: 14px;
+}
+
+.hands {
+	width: 10px;
+	height: 40px;
+	background-image:
+		linear-gradient(to bottom,
+			green 50%,
+			rgb(242, 198, 175) 50%);
+	position: absolute;
+	top: 70px;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+
+#left-hand {
+	left: -7px;
+	transform: rotate(30deg);
+	border-top-left-radius: 50%;
+}
+
+#right-hand {
+	left: 48px;
+	border-top-right-radius: 50%;
+	transform: rotate(-30deg);
+}
+
+#heart {
+	position: absolute;
+	top: 85px;
+	left: 30px;
+	transform: scale(1.5);
+	color: rgba(245, 0, 0, 1);
+	z-index: 5;
+	animation: heart-beat 5s ease-out 3s infinite alternate
+}
+
+@keyframes eye-blink {
+	0% {
+		transform: scaleY(1) translateY(0px) translateZ(0);
+	}
+
+	45% {
+		transform: scaleY(1) translateY(0px) translateZ(0);
+	}
+
+	50% {
+		transform: scaleY(0.1) translateZ(0);
+	}
+
+	55% {
+		transform: scaleY(1) translateY(0px);
+	}
+
+	100% {
+		transform: scaleY(1) translateY(0px) translateZ(0);
+	}
+}
+
+@keyframes eyebrow-raise {
+	0% {
+		top: -6px;
+	}
+
+	80% {
+		top: -8px;
+	}
+
+	100% {
+		top: -10px;
+	}
+}
+
+@keyframes eyeball-raise {
+	0% {
+		top: 3px;
+	}
+
+	80% {
+		top: 2px;
+	}
+
+	100% {
+		top: 1px;
+	}
+}
+
+@keyframes mouth-opening {
+	0% {
+		border-right: 7px;
+	}
+
+	50% {
+		border-right: 5px;
+	}
+
+	100% {
+		border-right: 2px;
+	}
+}
+@keyframes heart-beat {
+	0% {
+		transform: scale(1);
+	}
+
+	 25%{
+		 transform: scale(1.2);
+	 }
+	50% {
+		transform: scale(1.4);
+	}
+
+	100% {
+		transform: scale(1.2);
+	}
+}
+
+@media (max-width:600px) {
+	@keyframes heart-beat {
+		0% {
+			transform: scale(1);
+		}
+
+		 25%{
+			 transform: scale(1.1);
+		 }
+		50% {
+			transform: scale(1.2);
+		}
+
+		100% {
+			transform: scale(1.1);
+		}
+	}
+}
